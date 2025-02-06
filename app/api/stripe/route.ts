@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
       billing_address_collection: "auto",
       shipping_options: [
         {
-          shipping_rate: "shr_1QozxQAJl2gcbAi8kMW15fEV",
+          shipping_rate: process.env.NEXT_PUBLIC_STRIPE_SHIPPING_RATE,
         },
       ],
       line_items: items.map((item) => {
