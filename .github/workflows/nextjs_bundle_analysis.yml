@@ -1,7 +1,7 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
 
-name: 'Next.js Bundle Analysis'
+name: "Next.js Bundle Analysis"
 
 on:
   pull_request:
@@ -34,8 +34,8 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
-      # If pnpm is used, you need to switch the previous step with the following one. pnpm does not create a package-lock.json
-      # so the step above will fail to pull dependencies
+      # If pnpm is used, you need to switch the previous step with the following one.
+      # pnpm does not create a package-lock.json so the step above will fail to pull dependencies
       # - uses: pnpm/action-setup@v2
       #   name: Install pnpm
       #   id: pnpm-install
@@ -59,13 +59,13 @@ jobs:
         # change this if your site requires a custom build command
         run: ./node_modules/.bin/next build
 
-      # Here's the first place where next-bundle-analysis' own script is used
-      # This step pulls the raw bundle stats for the current bundle
+      # Here's the first place where next-bundle-analysis' own script is used.
+      # This step pulls the raw bundle stats for the current bundle.
       - name: Analyze bundle
         run: npx -p nextjs-bundle-analysis report
 
       - name: Upload bundle
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: bundle
           path: .next/analyze/__bundle_analysis.json
@@ -103,14 +103,13 @@ jobs:
           echo "body<<EOF" >> $GITHUB_OUTPUT
           echo "$(cat .next/analyze/__bundle_analysis_comment.txt)" >> $GITHUB_OUTPUT
           echo EOF >> $GITHUB_OUTPUT
-
       - name: Find Comment
         uses: peter-evans/find-comment@v2
         if: success() && github.event.number
         id: fc
         with:
           issue-number: ${{ github.event.number }}
-          body-includes: '<!-- __NEXTJS_BUNDLE -->'
+          body-includes: "<!-- __NEXTJS_BUNDLE -->"
 
       - name: Create Comment
         uses: peter-evans/create-or-update-comment@v2
