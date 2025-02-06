@@ -22,6 +22,20 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "lib/client.ts",
+    "app/components/Product.jsx",
+    "app/pages/components/Product.js",
+    "app/components/Info.tsx",
+    "app/product/[slug]/page.tsx",
+    "context/StateContext.tsx",
+    "app/api/helloworld.js",
+    "app/api/hello/route.ts",
+    "lib/utils.ts"
+  ],
   "exclude": ["node_modules"]
 }

@@ -8,7 +8,7 @@ export default function PerfectBanner() {
       <div>
         <Image src={perfect} alt="perfect occasion" width="442" height="532" />
       </div>
-      Chater 2 Laing the Founations 27
+
       <div className="perfect-message">
         <p>Perfect for </p>
         <p>special occasions</p>
