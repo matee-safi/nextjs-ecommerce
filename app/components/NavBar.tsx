@@ -5,9 +5,11 @@ import Link from "next/link";
 import { AiOutlineShopping } from "react-icons/ai";
 import Cart from "../components/Cart";
 import { useStateContext } from "@/context/StateContext";
+import { useSession } from "next-auth/react";
 
 export default function NavBar() {
   const { showCart, setShowCart, totalQuantities } = useStateContext();
+  const { data: session } = useSession();
 
   return (
     <div className="navbar-container">
@@ -19,6 +21,7 @@ export default function NavBar() {
           <Link href="/about">About</Link>
           <Link href="/shop">Shop</Link>
           <Link href="/contact">Contact</Link>
+          {session && <Link href="/account">Account</Link>}
 
           <button
             type="button"

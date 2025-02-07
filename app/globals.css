@@ -1410,3 +1410,57 @@ table.additional-info > tbody > tr > th {
   color: #f02d34;
   fill: #f02d34;
 }
+
+/* CHANGES FOR AUTHENTICATION */
+.demo-banner-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.demo-banner-container > span:nth-child(2) {
+  display: flex;
+}
+.demo-banner-container > span:nth-child(2) > img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+.demo-banner-container > span:nth-child(2) > p {
+  margin-right: 15px;
+}
+.demo-banner-container > span:nth-child(2) > a {
+  border-left: 2px solid #ffffff;
+  padding-left: 15px;
+}
+
+.your-account {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+.your-account p {
+  margin: 40px 0 0 0;
+  font-family: "Oswald", sans-serif;
+  font-size: 42px;
+}
+.display-profile {
+  width: 60%;
+  margin: 20px auto 50px auto;
+  text-align: center;
+}
+.display-profile div:nth-child(1) {
+  display: flex;
+}
+.profile-image {
+  margin-right: 20px;
+}
+.profile-image img {
+  width: 100px;
+  height: 100px;
+}
+.profile-details {
+  text-align: left;
+  border-left: 1px solid #dcdcdc;
+  display: block;
+  padding-left: 15px;
+  min-height: 200px;
+}

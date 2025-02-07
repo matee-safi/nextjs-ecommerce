@@ -35,7 +35,8 @@
     "context/StateContext.tsx",
     "app/api/helloworld.js",
     "app/api/hello/route.ts",
-    "lib/utils.ts"
+    "lib/utils.ts",
+    "app/account/page.jsx"
   ],
   "exclude": ["node_modules"]
 }
